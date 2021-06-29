@@ -1,8 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+
 
 namespace RestuarantMenu
 {
@@ -26,7 +24,28 @@ namespace RestuarantMenu
         public string Category { get; set; }
         public bool New { get; set; }
 
+        //Method
+        public override bool Equals(object toBeCompared)
+        {
 
+            if (toBeCompared == this)
+            {
+                return true;
+            }
+
+            if (toBeCompared == null)
+            {
+                return false;
+            }
+
+            if (toBeCompared.GetType() != this.GetType())
+            {
+                return false;
+            }
+
+            MenuItem m = toBeCompared as MenuItem;
+            return m.Description.ToLower() == Description.ToLower();
+        }
 
 
     }
