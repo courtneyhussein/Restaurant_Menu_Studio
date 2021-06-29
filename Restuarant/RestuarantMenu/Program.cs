@@ -26,14 +26,13 @@ namespace RestuarantMenu
             //Instatiate Menu class wtih itemList
             Menu menu = new Menu(itemList);
 
-            //Display menu items.
-            menu.PrintMenuItems();
-
-            //Create a new menu item manually.
+            //Create new menu items manually.
             MenuItem menuItemFour = new MenuItem(12.15, "Veal Parmesan", "Main Course", true);
+            MenuItem menuItemFive = new MenuItem(5, "Pizza", "Main Course", true);
 
-            //Add it to menu manually.
+            //Add them to menu manually.
             menu.ItemsList.Add(menuItemFour);
+            menu.ItemsList.Add(menuItemFive);
 
             //Display menu items.
             menu.PrintMenuItems();
@@ -43,6 +42,18 @@ namespace RestuarantMenu
 
             //Display menu items.
             menu.PrintMenuItems();
+
+            menu.RemoveMenuItem();
+
+            //Display menu items.
+            menu.PrintMenuItems();
+
+            //Display one menu items.
+            menu.DisplayOneMenuItem();
+
+            //Check for equality between to menu items.
+            Console.WriteLine($"\nMenu items four and five are the same: {menuItemFive.Equals(menuItemFour)}");
+            
 
 
         }
